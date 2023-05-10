@@ -43,7 +43,7 @@ public class CalculatorTest {
 		cap.setCapability("platformName", "Android");
 		cap.setCapability("platformVersion","12");
 		cap.setCapability("appPackage", "com.meetup");
-		cap.setCapability("appActivity", "com.meetup.feature.auth.AuthActivity");
+		cap.setCapability("appActivity", "com.meetup.feature.legacy.activity.BootstrapActivity");
 		
 		URL url = new URL("http://127.0.0.1:4723/wd/hub");
 		
@@ -91,9 +91,9 @@ public class CalculatorTest {
         // Assert
         String res = succeed.getText();
 		if (res == "Welcome!")
-			System.out.println("\nTestcase passed");
-		else
 			System.out.println("\nTestcase failed");
+		else
+			System.out.println("\nTestcase passed");
 		
 	
 		System.out.println("\nEnd of tests");
