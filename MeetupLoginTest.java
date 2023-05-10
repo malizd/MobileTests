@@ -53,19 +53,19 @@ public class CalculatorTest {
     // Disclaimer: Appium inspector did not connect to my phone device so element ids are not exact and test would not run
     
 // POsitive testcase		
-        MobileElement loginButton = (MobileElement) driver.findElementById("com.meetup:id/sign_in_button");
+        MobileElement loginButton = (MobileElement) driver.findElementById("com.meetup:id/intro_login_link_button");
         loginButton.click();
 
-        MobileElement emailInput = (MobileElement) driver.findElementById("com.meetup:id/signin");
+        MobileElement emailInput = (MobileElement) driver.findElementById("com.meetup:id/login_email");
         emailInput.sendKeys("test1valid@yahoo.com");
 
-        MobileElement passwordInput = (MobileElement) driver.findElementById("com.meetup:id/password_sign_in");
+        MobileElement passwordInput = (MobileElement) driver.findElementById("com.meetup:id/login_password");
         passwordInput.sendKeys("MyPass_1");
 
-        MobileElement signInButton = (MobileElement) driver.findElementById("com.meetup:id/sign_in_button");
+        MobileElement signInButton = (MobileElement) driver.findElementById("com.meetup:id/email_login_button");
         signInButton.click();
 
-        MobileElement succeed = (MobileElement) driver.findElementById("com.meetup:id/succeddMsg");
+        MobileElement succeed = (MobileElement) driver.findElementById("com.meetup:id/upgrade_button");
 //        Assert
 		String res = succeed.getText();
 		if (res == "Welcome!")
@@ -74,19 +74,19 @@ public class CalculatorTest {
 			System.out.println("\nTestcase failed");
 
 // negative testcase
-        MobileElement loginButton = (MobileElement) driver.findElementById("com.meetup:id/sign_in_button");
+        MobileElement loginButton = (MobileElement) driver.findElementById("com.meetup:id/intro_login_link_button");
         loginButton.click();
 
-        MobileElement emailInput = (MobileElement) driver.findElementById("com.meetup:id/signin");
+        MobileElement emailInput = (MobileElement) driver.findElementById("com.meetup:id/login_email");
         emailInput.sendKeys("test1valid@yahoo.com");
 
-        MobileElement passwordInput = (MobileElement) driver.findElementById("com.meetup:id/password_sign_in");
+        MobileElement passwordInput = (MobileElement) driver.findElementById("com.meetup:id/login_password");
         passwordInput.sendKeys("MyPass_1_Invalid");
 
-        MobileElement signInButton = (MobileElement) driver.findElementById("com.meetup:id/sign_in_button");
+        MobileElement signInButton = (MobileElement) driver.findElementById("com.meetup:id/email_login_button");
         signInButton.click();
 
-        MobileElement succeed = (MobileElement) driver.findElementById("com.meetup:id/succeddMsg");
+        MobileElement succeed = (MobileElement) driver.findElementById("com.meetup:id/upgrade_button");
 
         // Assert
         String res = succeed.getText();
