@@ -50,9 +50,7 @@ public class CalculatorTest {
 		driver = new AppiumDriver(url,cap);
 		System.out.println("Meetup App test started...");
 		
-    // Disclaimer: Appium inspector did not connect to my phone device so element ids are not exact and test would not run
-    
-// POsitive testcase		
+// Positive testcase
         MobileElement loginButton = (MobileElement) driver.findElementById("com.meetup:id/intro_login_link_button");
         loginButton.click();
 
@@ -64,7 +62,13 @@ public class CalculatorTest {
 
         MobileElement signInButton = (MobileElement) driver.findElementById("com.meetup:id/email_login_button");
         signInButton.click();
+		
+	// ToDo: a 10 seconds delay
 
+	// Todo: Handling edge cases where upon a login attempt, google.android pops up 'Password Save' window which needs top be confirmed (perhaps with Never button click)
+	// Todo: Handling an edge case where upon a successful login, Meetup pops up a screen asking for rating an attended event or some notification
+		
+	// When landed at Homepage screen
         MobileElement succeed = (MobileElement) driver.findElementById("com.meetup:id/upgrade_button");
 //        Assert
 		String res = succeed.getText();
@@ -73,6 +77,8 @@ public class CalculatorTest {
 		else
 			System.out.println("\nTestcase failed");
 
+	// ToDo: loguut();	// get prepared for another login attempt
+		
 // negative testcase
         MobileElement loginButton = (MobileElement) driver.findElementById("com.meetup:id/intro_login_link_button");
         loginButton.click();
@@ -86,17 +92,20 @@ public class CalculatorTest {
         MobileElement signInButton = (MobileElement) driver.findElementById("com.meetup:id/email_login_button");
         signInButton.click();
 
+	// ToDo: a 10 seconds delay
+		
         MobileElement succeed = (MobileElement) driver.findElementById("com.meetup:id/upgrade_button");
 
         // Assert
         String res = succeed.getText();
 		if (res == "Welcome!")
-			System.out.println("\nTestcase failed");
+			System.out.println("\nTestcase failed"); 	// False positive
 		else
 			System.out.println("\nTestcase passed");
-		
 	
-		System.out.println("\nEnd of tests");
+	// ToDo: loguut();	// get prepared for another login attempt
+		
+	System.out.println("\nEnd of tests");
 
 	}
 }
